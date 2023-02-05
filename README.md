@@ -17,3 +17,30 @@ Click the above "Open in Gitpod" button to start a new workspace. Once you're re
 ### An existing project
 
 To get started with .NET Core CLI on Gitpod, add a [`.gitpod.yml`](./.gitpod.yml) file which contains the configuration to improve the developer experience on Gitpod. To learn more, please see the [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
+
+## Notes
+
+This is Gitpod's repository for C# files. It includes all the configurations required to run C# files. 
+
+Run a C# file like so:
+- `dotnet run`
+
+### Basics
+
+#### Variables
+
+Variables must be given a data type when they are declared:
+- string some-text
+- int a-number
+
+Variables are named using camelCase
+
+Variables can be injected into strings via template literals. To do so, use the same syntax as JS - a $ before the string and {} to enclose the variable inside 
+
+#### In-built functions
+
+Console.WriteLine("") prints some text to the console
+
+Console.ReadLine() awaits input some the user. This must be assigned to a variable
+
+
