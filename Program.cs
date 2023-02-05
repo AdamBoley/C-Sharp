@@ -114,6 +114,29 @@ namespace dotnetcore
 
             Console.WriteLine(Math.Max(25, 39));
             // returns 39
-        }  
+            Converter();
+        }
+
+        static void Converter(){
+            // This is a program that finds the number of gold, silver and bronze coins in an amount
+            Console.WriteLine("Welcome to Money Maker!");
+            Console.WriteLine("Enter an amount to convert");
+            string amount = Console.ReadLine();
+            double amountToConvert = Math.Floor(Convert.ToDouble(amount));
+            Console.WriteLine($"{amountToConvert} pence is equal to...");
+            
+            int goldValue = 10;
+            int silverValue = 5;
+
+            double goldCoins = Math.Floor(amountToConvert / goldValue);
+            double remainder = amountToConvert % goldValue;
+
+            double silverCoins = Math.Floor(remainder / silverValue);
+            remainder = remainder % silverValue;
+
+            Console.WriteLine($"Gold coins: {goldCoins}");
+            Console.WriteLine($"Silver coins: {silverCoins}");
+            Console.WriteLine($"Bronze coins: {remainder}");
+        }
     }
 }

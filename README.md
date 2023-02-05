@@ -59,7 +59,7 @@ C# is also statically-typed - meaning that the compiler will check that the data
 
 Variables are named using camelCase or snake_case, as in Python. Using hyphens is prohibited.
 
-Variables can be injected into strings via template literals. To do so, use the same syntax as JS - a $ before the string and {} to enclose the variable inside 
+
 
 We can declare variables in 2 ways:
 `int myAge`
@@ -115,6 +115,21 @@ Operations involving integers will always return integers
 
 If we have a calculation with a double and an integer, the result will be a double
 
+##### Strings
+
+When using long strings, such as blocks of text that hold quote marks, we can use the escape character, \ before a quote mark so that it is not read
+
+We can force new lines the same way, using \n
+
+We can concatenate strings using addition symbols
+
+Variables can be injected into strings via string interpolation. To do so, use the same syntax as JS string literals - a $ before the string and {} to enclose the variable inside 
+
+C# has methods that can be used on strings:
+- Length - returns the number of characters in a string
+- IndexOf returns the position of a particular character or substring as an index, and -1 if the argument does not exist. The substring is passed as a character
+- Substring grabs a slice of a string. We must pass a starting position, and can optionally pass a length as well
+- ToUpper and ToLower uppercase and lowercase a string
 
 
 #### In-built functions
