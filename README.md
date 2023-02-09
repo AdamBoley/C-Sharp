@@ -162,3 +162,52 @@ Unlike Python, which reads and executes a file from top to bottom, a C# file is 
 
 We can invoke functions by name, as long as they are in the same class.
 
+
+#### Booleans
+
+Boolean variables are declared with the `bool` flag
+
+boolean variables can be assigned `true` and `false` as values
+
+boolean variables can also be assigned mathematical equations and calculations, as well as returns from functions. These will then evaluate to true or false depending on the result
+
+We can also do some wackt stuff, like:
+`bool answer = (true == false);`
+This evaluates to false, since true is not equal to false
+
+#### Comparison operators
+
+- `==`
+- `!=`
+- `<`
+- `>`
+- `<=`
+- `>=`
+
+#### Boolean operators
+C# uses the same boolean operators as JavaScript 
+
+- `&&` - AND - both/all things must evaluate to true for true to be returned
+- `||` - OR - any one of the things must evaluate to true for true to be returned
+- `!` - NOT/opposite - reverses any boolean expression, so that expressions that would evaluate to true return as false:
+    - `bool notExample = !(1 < 3);` 
+    - this returns as false, since 1 is less than 3, but the NOT operator reverses that
+
+Boolean expressions are often very complex, where several simple expressions are connected with logical operators
+
+#### Conditionals
+
+Like JS, IF conditionals are placed inside brackets
+
+Conditionals use the keywords `if`, `else` and `else if`
+
+C# also supports Switch statements, which follows the same syntax as JS
+
+Switch statements are preferable to writing long chains of IF/ELSE IF statements. Rather than going through IF/ELSE IF statements to find the first one that evaluates to true, a switch statement will check to see if the value of the variable matches any of the cases it contains
+
+The value in the brackets after the switch keyword is always the variable whose value we are checking
+
+Switch statements should have a `default` case at the bottom
+
+C# also supports ternary operators for compact binary decisions
+

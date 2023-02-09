@@ -138,5 +138,91 @@ namespace dotnetcore
             Console.WriteLine($"Silver coins: {silverCoins}");
             Console.WriteLine($"Bronze coins: {remainder}");
         }
+
+        static void Switch(){
+            // Switch statement to pick a movie
+            Console.WriteLine("Pick a genre:");
+            string genre = Console.ReadLine();
+            switch (genre) {
+                case "Drama":
+                    Console.WriteLine("Citizen Kane");
+                    break;
+                case "Comedy":
+                    Console.WriteLine("Duck Soup");
+                    break;
+                case "Adventure":
+                    Console.WriteLine("King Kong");
+                    break;
+                case "Horror":
+                    Console.WriteLine("Psycho");
+                    break;
+                case "Science Fiction":
+                    Console.WriteLine("2001: A Space Odyssey");
+                    break;
+                default:
+                    Console.WriteLine("No movie found");
+                    break;
+                }
+        }
+
+        static void Ternary(){
+            // program for determining whether to pick a pepper using a ternary conditional
+            int pepperLength = 4;
+            string message = (pepperLength >= 3.5) ? "ready!" : "wait a little longer";
+            Console.WriteLine(message);
+        }
+
+        static void PasswordChecker(){
+            // won't actually work
+            // Uses a custom method Tools.Contains
+            /*
+            int minLength = 8;
+            string uppercase = "ABCDEFGHIJKKMNOPQRSTUVWXYZ";
+            string lowercase = "abcdefghijklmnopqrstuvwxyz";
+            string digits = "0123456789";
+            string specialChars = "?!@#~=-+/*.,";
+
+            Console.WriteLine("Enter a password:");
+            string password = Console.ReadLine();
+            int score = 0;
+            if (password.Length >= minLength){
+                score ++;
+            }
+            if (Tools.Contains(password, uppercase)){
+                score++;
+            }
+            if (Tools.Contains(password, lowercase)){
+                score++;
+            }
+            if (Tools.Contains(password, digits)){
+                score++;
+            }
+            if (Tools.Contains(password, specialChars)){
+                score++;
+            }
+            Console.WriteLine(score);
+
+            switch (score){
+                case 5:
+                Console.WriteLine("Password is very strong");
+                break;
+                case 4:
+                Console.WriteLine("Password is very strong");
+                break;
+                case 3:
+                Console.WriteLine("password is strong");
+                break;
+                case 2:
+                Console.WriteLine("password is medium");
+                break;
+                case 1:
+                Console.WriteLine("password is weak");
+                break;
+                default:
+                Console.WriteLine("password meets no criteria");
+                break;
+                }
+                */
+        }
     }
 }
