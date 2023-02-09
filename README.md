@@ -211,3 +211,40 @@ Switch statements should have a `default` case at the bottom
 
 C# also supports ternary operators for compact binary decisions
 
+#### Methods
+
+Console.WriteLine() and Math.Min() are methods. When we use these methods, we are said to be calling or invoking them. 
+
+We can store the returned output of a method call inside a variable
+
+Methods are C#'s version of JS functions and Python defs. 
+
+We preface a method name with `static void`. Methods are named using PascalCase. As with JS, the body of the method is written inside curly braces
+
+In C#, when we use the `dotnet run` terminal command, the primary method called Main() is executed. For a method to be executed, it must be called in the Main() method, or by a function that is itself called by Main(), or however far back the chain of execution goes.
+
+We can pass arguments to method calls. When the method is defined, we can specify a number of parameters. These parameters are variables, and as such must be declared with their data-type.
+
+Parameters have block-level scope, so they can only be used inside their method
+
+We can use optional parameters when defining methods. This means that we do not have to call a method with all of its parameters. This is useful in situations where we may not be able to pass some of the required variables to a method
+
+To do this, we can use the equals sign to assign a default value to parameters. If a parameter is not fulfilled, the default value is used instead.
+
+If a method has several optional parameters, then when we pass a variable, that variable will fill the first valid parameter. We can instead specify exactly what optional parameter will be filled with `YourMethodName(d: 4)`, in a case where YourMethodName has optional parameters a, b, c, and d. These are called named arguments. In this case, optional parameter d will be filled with the passed value of 4.
+
+Required parameters that do not have default values are called positional arguments. 
+
+When calling methods, we must call named arguments before positional arguments.
+
+##### Method overloading
+
+An extension of the optional parameters concept is method overloading. This is where methods return different outputs depending on what and how many arguments were passed to them.
+
+The Math.Round() method is an excellent example.
+
+We can call Math.Round(double, int). This round the double to int decimal places, so Math.Round(3.1415, 2) returns 3.14
+
+We can also call Math.Round(double). This rounds double to the nearest whole number. This is the default, so to speak.
+
+These methods are separate methods, each declared with `static void`. The difference is in the number of parameters they take. 

@@ -137,6 +137,8 @@ namespace dotnetcore
             Console.WriteLine($"Gold coins: {goldCoins}");
             Console.WriteLine($"Silver coins: {silverCoins}");
             Console.WriteLine($"Bronze coins: {remainder}");
+
+            Switch();
         }
 
         static void Switch(){
@@ -163,6 +165,7 @@ namespace dotnetcore
                     Console.WriteLine("No movie found");
                     break;
                 }
+            GetInput();
         }
 
         static void Ternary(){
@@ -173,6 +176,7 @@ namespace dotnetcore
         }
 
         static void PasswordChecker(){
+
             // won't actually work
             // Uses a custom method Tools.Contains
             /*
@@ -223,6 +227,79 @@ namespace dotnetcore
                 break;
                 }
                 */
+        }
+
+        static void GetInput(){
+            // grabs input
+            Console.WriteLine("Enter your name");
+            string name = Console.ReadLine();
+            // calls method
+            DisplayOutput(name);
+        }
+
+        static void DisplayOutput(string name){
+            // called by method above
+            Console.WriteLine($"Your name is {name}");
+            // pass name to OptionalParameters()
+            OptionalParameters(name);
+            // Call OptionalParameters without passing any arguments. This is fine, since the method has a default value
+            OptionalParameters();
+        }
+
+        static void OptionalParameters(string name = "John Doe"){
+            Console.WriteLine($"Hello {name}");
+            // Will print John Doe when no name is passed
+            // Will print name when a name is passed
+            GetMoreInput();
+        }
+
+        static void GetMoreInput(){
+            Console.WriteLine("Enter some more information");
+            Console.WriteLine("Enter job");
+            string job = Console.ReadLine();
+
+            Console.WriteLine("Enter name");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter age");
+            string age = Console.ReadLine();
+
+            // This passes one variable to the method, and will fill up the job parameter, since it is the first valid parameter
+            DisplayMoreOutput(age);
+            // We can override this with:
+            DisplayMoreOutput(age: age);
+            // This forces the variable to fill up the age variable
+        }
+
+        static void DisplayMoreOutput(string job = "coder", string name = "John Doe", string age = "30"){
+            Console.WriteLine($"Your job is {job}, your name is {name}, your age is {age}");
+
+            MethodOverloading();
+        }
+
+        static void MethodOverloading()
+        {
+            //These three method calls are each to different methods, as determined by the number of arguments
+            // calls first method, which accepts 2 parameters, since the method call has 2 arguments
+            NamePets("Barty", "Lisa");
+
+            // calls second method, which accepts 3 arguments
+            NamePets("Barty", "Lisa", "Ratchet");
+
+            // calls third method, which accepts 0 arguments
+            NamePets();
+        }
+
+        static void NamePets(string nameOne, string nameTwo){
+            Console.WriteLine($"Your pets {nameOne} and {nameTwo} will be joining your voyage across space!");
+        }
+
+        static void NamePets(string nameOne, string nameTwo, string nameThree){
+            Console.WriteLine($"Your pets {nameOne}, {nameTwo} and {nameThree} will be joining your voyage across space!");
+        }
+
+        static void NamePets(){
+            Console.WriteLine("Aw, you have no spacefaring pets :(");
         }
     }
 }
