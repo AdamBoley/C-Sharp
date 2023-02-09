@@ -248,3 +248,86 @@ We can call Math.Round(double, int). This round the double to int decimal places
 We can also call Math.Round(double). This rounds double to the nearest whole number. This is the default, so to speak.
 
 These methods are separate methods, each declared with `static void`. The difference is in the number of parameters they take. 
+
+##### Return
+
+Much as in JS and Python, the return keyword is used to return outputs from a method to a method caller
+
+Methods that return things are declared with `static <data-type>` instead of `static void`.
+
+Methods can only return one data-type. This is specified in the method definition, such as `static string` or `static double` or `static int`, which return a string, a double and an int respectively.
+
+We use `static void` when a method doesn't return any output
+
+Failing to specify the return data-type will cause an error. Specifying the wrong data-type in the method defintion will also cause an error
+
+##### Out
+
+Methods can only return one thing. Sometimes we want to return multiple values.
+
+The `Int32.TryParse` method is an example of this. This method tries to parse its input as an integer. If it can do this, it returns true and also the converted input. If it cannot convert, it returns false and 0.
+
+The syntax for this is a bit tricky. See the code for the syntax. This isn't an issue in Python, as Python functions can return multiple values, and we can use multiple variables in function calls to capture these.
+
+The variables that are being updated with `out` must be set within the method body. Also, if a method specifically handles an out variable, it must be passed in the method call.
+
+##### Alternate Expressions
+
+For short methods, defining a method the usual way is doing too much work. To cut down space, we can use expression-bodied definitions and lambda expressions
+
+Expression-bodied definitions are C#'s equivalent of JS arrow functions
+
+Sometimes we have situations where we need to pass methods as arguments when calling other methods
+
+These passed methods can function like checkers
+
+Lambda expressions take this a step further - they define the method directly in the method call. Since the method is being defined like that, it has no name, and as such is anonymous
+
+#### Data Structures
+
+##### Arrays
+
+Arrays are like JS Arrays and Python lists
+
+C# arrays can contain only 1 data-type
+
+They are declared with the data-type, like other variables - `int[] integerArray` or `string[] stringArray`
+
+The square brackets [] indicate that it is an array
+
+The actual elements of the array are held inside curly braces {}
+
+Unlike other variables, we cannot declare an array without a value and then assign a value later
+
+Therefore, if we want to use this approach, we must use the `new` keyword
+
+We can grab the length of an array with `array.Length`. Length is an integer, so a variable holding this value must be initialised an integer variable
+
+C# supports array indexing. Arrays start at index 0. We index using square bracket notation
+
+C# arrays have separate length and value properties - an array can be initialised with a certain length, but no defined values
+
+We can then go back and populate the array with these values
+
+C# arrays can have their values modified, but their lengths are fixed
+
+Array indexing cannot use negative numbers
+
+Arrays have several built in methods. Some of the most common are `Array.Sort()`, `Array.IndexOf()` and `Array.Find()`. These methods take the array as a parameter, like `Array.Sort(myArray)`. 
+
+We don't use `myArray.sort()`, as we might in Python
+
+Sort() organises the array in ascending numerical order for integer arrays, and alphabetically for string arrays
+
+IndexOf() returns an index value of the first instance of the specified parameter - `Array.IndexOf(myArray, 6)` returns the index of the first instance of 6
+
+Find() searches for and returns a specific set of values that match some criteria - `Array.Find(myArray, height => height > 6)`. It is accepted practice to use Lambda functions to construct Find() queries
+
+
+
+
+
+
+
+
+

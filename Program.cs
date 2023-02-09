@@ -300,6 +300,156 @@ namespace dotnetcore
 
         static void NamePets(){
             Console.WriteLine("Aw, you have no spacefaring pets :(");
+
+            // Here we call the Decorate Planet method. Its output will be returned here
+            Console.WriteLine(DecoratePlanet("Jupiter"));
+            OutMethod();
         }
+
+        static string DecoratePlanet(string name){
+            //This is how we structure a method that returns some output
+            return ($"*.*.* Welcome to {name} *.*.*");
+        }
+
+        static void OutMethod()
+        {
+            //This is a demonstration of the out keyword, using the Int32.TryParse method
+            
+            string ageAsString = "102";
+            string nameAsString = "Granny";
+
+            // We want to convert ageAsString to an integer
+            int ageAsInt;
+            bool outcome = Int32.TryParse(ageAsString, out ageAsInt);
+            // outcome will be true in this case, and the method will set ageAsInt as the converted value
+
+            // Log these out
+            Console.WriteLine(outcome);
+            Console.WriteLine(ageAsInt);
+
+            // We now try the same thing as above
+            int nameAsInt;
+            bool outcome2 = Int32.TryParse(nameAsString, out nameAsInt);
+            // outcome2 will be false in this case, as nameAsString cannot be converted into an integer. nameAsInt will be reassigned a value of 0
+
+            Console.WriteLine(outcome2);
+            Console.WriteLine(nameAsInt);
+
+            CustomOut();
+            
+        }  
+
+        static void CustomOut(){
+            // This is a demonstration of a custom use of out
+            // Define variables
+            string statement = "HELLO";
+            bool flag;
+
+            // call Whisper method, setting the out variable
+            Console.WriteLine(Whisper(statement, out flag));
+
+            LongWordFinder();
+        }
+
+        static string Whisper(string phrase, out bool whispered){
+            //Whisper method, lowercases a string
+            phrase = phrase.ToLower();
+            // also sets whispered to true, which makes flag in the method caller true
+            whispered = true;
+            return phrase;
+        }
+
+        static void LongWordFinder(){
+            // Array to be used as first argument
+            string[] adjectives = {"rocky", "mountainous", "cosmic", "extraterrestrial"};
+            
+            // Call Array.Find() and 
+            // Pass in the array and IsLong method as arguments
+            string firstLongAdjective = Array.Find(adjectives, IsLong);
+            
+            Console.WriteLine($"The first long word is: {firstLongAdjective}.");
+            // prints mountainous, since that is the first element at which IsLong returns as true
+
+            LambdaExpression();
+        }
+
+        public static bool IsLong(string word){
+            //This is a checker method, which returns true or false depending on the length of the word.
+            return word.Length > 8;
+        }
+
+        public static void LambdaExpression(){
+            string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
+      
+            bool makesContact = Array.Exists(spaceRocks, (string s) => s == "meteorite");
+            // bool makesContact = Array.Exists(spaceRocks, s => s == "meteorite");
+            // This is a shorter way of constructing the lambda expression
+            // s here functions sort of like a temporary variable in loops
+
+            // The conventional code below is the normal way of doing this, calling a separate HitGround method
+            // bool makesContact = Array.Exists(spaceRocks, HitGround);
+
+            if (makesContact)
+            {
+                Console.WriteLine("At least one space rock has reached the Earth's surface!");
+            } 
+            } 
+            
+            // Separate method for an expression-bodied definition
+            // static bool HitGround(string s)
+            // {
+            //   return s == "meteorite";
+            // }
+        
+        static void Arrays() {
+
+            //This is how we initialise an array
+            string[] summerStrut = new string[] {"Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles"};
+            
+            //The simpler way of array definition and initialisation
+            int[] ratings = {1, 3, 5, 5, 4, 3, 5, 1};
+            
+            //Indexing
+            string song = summerStrut[1];
+            int songRating = ratings[1];
+            Console.WriteLine($"You rated {song} {songRating} stars");
+
+            // Array indexing to update values
+            summerStrut[7] = "I Like It";
+            ratings[7] = 1;
+
+            int position = Array.IndexOf(ratings, 3);
+            Console.WriteLine($"Song number {position + 1} is rated 3 stars");
+            //prints song number 2 is rated 3 stars
+
+            string tenChars = Array.Find(summerStrut, song => song.Length > 10);
+            Console.WriteLine($"The first song to have a name of more than 10 character is {tenChars}");
+            //prints Raspberry Beret
+
+            Array.Sort(summerStrut);
+            Console.WriteLine(summerStrut[0]);
+            //Print Despacito
+            Console.WriteLine(summerStrut[7]);
+            //Prints Rebel Rebel
+
+            // instantiate a new array of 8 elements
+            string[] summerStrutCopy = new string[8];
+
+            //Copy arrays
+            Array.Copy(summerStrut, summerStrutCopy, 8);
+
+            //print
+            Console.WriteLine(summerStrutCopy);
+
+            //reverse array
+            Array.Reverse(summerStrut);
+            Console.WriteLine(summerStrut[0]);
+            
+            //replace all values with 0
+            Array.Clear(ratings, 0, 8);
+            Console.WriteLine(ratings[0]);
+        }
+        
+
     }
 }
